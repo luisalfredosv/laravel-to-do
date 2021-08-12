@@ -83,8 +83,8 @@ class TodoController extends Controller
         $todo->todo = $request->todo;
 
         if($request->has('complete')){
-            $todo->completed = true
-        }
+            $todo->completed = true;
+        };
 
         $todo->save();
 
@@ -102,11 +102,11 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        $todo = Todo::findOrFail($id)
+        $todo = Todo::findOrFail($id);
         $todo->delete();
 
         return response()->json([
             'status' => 'success'
-        ])
+        ]);
     }
 }

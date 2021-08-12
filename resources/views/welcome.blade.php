@@ -11,8 +11,10 @@
     </head>
         
     <body>
+        <!-- Punto de entrada de Vue -->
         <div id="app">
-
+            <!-- Componente Padre -->
+            <App />
         </div>
     </body>
     <script src="{{ mix('js/app.js') }}"></script>

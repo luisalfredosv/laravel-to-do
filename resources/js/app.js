@@ -1,4 +1,20 @@
+// Se debe importar el componente en la vista blade.php
 import App from "./components/App";
+
+// Es necesario importarlo cuando hay librerias externas que hacen referencia a Vue
+import Vue from "vue";
+
+// Importacion de fonts
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPlus, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+const icons = [faPlus, faEdit, faTrash];
+
+library.add(icons);
+
+// componente FontAwesome
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -6,7 +22,7 @@ import App from "./components/App";
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require("./bootstrap");
+// require("./bootstrap"); // lo comente porque hace llamadas a jquery y popper(.js)
 
 window.Vue = require("vue").default;
 
